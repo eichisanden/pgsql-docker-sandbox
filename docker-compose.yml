@@ -3,50 +3,30 @@ services:
   pgsql11a:
     build:
       context: ./pgsql11
-    environment:
-      POSTGRES_PASSWORD: postgres
   pgsql11b:
     build:
       context: ./pgsql11
-    environment:
-      POSTGRES_PASSWORD: postgres
   pgsql12a:
     build:
       context: ./pgsql12
-    environment:
-      POSTGRES_PASSWORD: postgres
   pgsql12b:
     build:
       context: ./pgsql12
-    environment:
-      POSTGRES_PASSWORD: postgres
   pgsql13a:
     build:
       context: ./pgsql13
-    environment:
-      POSTGRES_PASSWORD: postgres
   pgsql13b:
     build:
       context: ./pgsql13
-    environment:
-      POSTGRES_PASSWORD: postgres
   pgsql14a:
     build:
       context: ./pgsql14
-    environment:
-      POSTGRES_PASSWORD: postgres
   pgsql14b:
     build:
       context: ./pgsql14
-    environment:
-      POSTGRES_PASSWORD: postgres
   pgsql15a:
     build:
       context: ./pgsql15
-    environment:
-      POSTGRES_PASSWORD: postgres
   pgsql15b:
     build:
       context: ./pgsql15
-    environment:
-      POSTGRES_PASSWORD: postgres
