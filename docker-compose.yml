@@ -1,0 +1,43 @@
+version: '3.1'
+services:
+  pgsql11a:
+    image: postgres:11.16
+    environment:
+      POSTGRES_PASSWORD: postgres
+  pgsql11b:
+    image: postgres:11.16
+    environment:
+      POSTGRES_PASSWORD: postgres
+  pgsql12a:
+    image: postgres:12.11
+    environment:
+      POSTGRES_PASSWORD: postgres
+  pgsql12b:
+    image: postgres:12.11
+    environment:
+      POSTGRES_PASSWORD: postgres
+  pgsql13a:
+    image: postgres:13.7
+    environment:
+      POSTGRES_PASSWORD: postgres
+  pgsql13b:
+    image: postgres:13.7
+    environment:
+      POSTGRES_PASSWORD: postgres
+  pgsql14a:
+    image: postgres:14.3
+    environment:
+      POSTGRES_PASSWORD: postgres
+  pgsql14b:
+    image: postgres:14.3
+    environment:
+      POSTGRES_PASSWORD: postgres
+  pgsql15a:
+    image: postgres:15beta1
+    environment:
+      POSTGRES_PASSWORD: postgres
+  pgsql15b:
+    image: postgres:15beta1
+    environment:
+      POSTGRES_PASSWORD: postgres
+    
