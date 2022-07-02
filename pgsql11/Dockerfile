@@ -4,3 +4,4 @@ ENV LANG ja_JP.utf8
 ENV TZ="Asia/Tokyo"
 ENV POSTGRES_PASSWORD=postgres
 ENV POSTGRES_INITDB_ARGS="--encoding=UTF-8 --locale=C"
+CMD ["-c", "archive_mode=on"]

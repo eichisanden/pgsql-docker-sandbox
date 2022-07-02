@@ -1,32 +1,34 @@
 version: "3.9"
 services:
-  pgsql11a:
+  11-main:
+    hostname: pgsql11a
     build:
       context: ./pgsql11
-  pgsql11b:
+  11-sub:
+    hostname: pgsql11b
     build:
       context: ./pgsql11
-  pgsql12a:
-    build:
-      context: ./pgsql12
-  pgsql12b:
-    build:
-      context: ./pgsql12
-  pgsql13a:
-    build:
-      context: ./pgsql13
-  pgsql13b:
-    build:
-      context: ./pgsql13
-  pgsql14a:
-    build:
-      context: ./pgsql14
-  pgsql14b:
-    build:
-      context: ./pgsql14
-  pgsql15a:
-    build:
-      context: ./pgsql15
-  pgsql15b:
-    build:
-      context: ./pgsql15
+  # 12-main:
+  #   build:
+  #     context: ./pgsql12
+  # 12-sub:
+  #   build:
+  #     context: ./pgsql12
+  # 13-main:
+  #   build:
+  #     context: ./pgsql13
+  # 13-sub:
+  #   build:
+  #     context: ./pgsql13
+  # 14-main:
+  #   build:
+  #     context: ./pgsql14
+  # 14-sub:
+  #   build:
+  #     context: ./pgsql14
+  # 15-main:
+  #   build:
+  #     context: ./pgsql15
+  # 15-sub:
+  #   build:
+  #     context: ./pgsql15
