@@ -5,15 +5,16 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
       - POSTGRES_INITDB_ARGS=--encoding=UTF-8 --no-locale
       - TZ=Asia/Tokyo
     ports:
       - 15432:5432
     healthcheck:
       test: pg_isready -U postgres -d postgres
-      interval: 1s
-      timeout: 1s
-      retries: 5
+      interval: 5s
+      timeout: 20s
+      retries: 10
     command:
       - -c
       - config_file=/etc/postgresql/postgresql.conf
@@ -29,24 +30,22 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
       - POSTGRES_INITDB_ARGS=--encoding=UTF-8 --no-locale
       - TZ=Asia/Tokyo
     ports:
       - 15433:5432
     healthcheck:
       test: pg_isready -U postgres -d postgres
-      interval: 1s
-      timeout: 1s
-      retries: 5
-    command:
-      - -c
-      - config_file=/etc/postgresql/postgresql.conf
-      - -c
-      - hba_file=/etc/postgresql/pg_hba.conf
+      interval: 5s
+      timeout: 20s
+      retries: 10
+    entrypoint: sh /entrypoint.sh
     volumes:
       - ./replica1/data:/var/lib/postgresql/data
       - ./replica1/postgresql.conf:/etc/postgresql/postgresql.conf
       - ./replica1/pg_hba.conf:/etc/postgresql/pg_hba.conf
+      - ./replica1/entrypoint.sh:/entrypoint.sh
     depends_on:
       primary:
         condition: service_healthy
@@ -55,24 +54,22 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
       - POSTGRES_INITDB_ARGS=--encoding=UTF-8 --no-locale
       - TZ=Asia/Tokyo
     ports:
       - 15434:5432
     healthcheck:
       test: pg_isready -U postgres -d postgres
-      interval: 1s
-      timeout: 1s
-      retries: 5
-    command:
-      - -c
-      - config_file=/etc/postgresql/postgresql.conf
-      - -c
-      - hba_file=/etc/postgresql/pg_hba.conf
+      interval: 5s
+      timeout: 20s
+      retries: 10
+    entrypoint: sh /entrypoint.sh
     volumes:
       - ./replica2/data:/var/lib/postgresql/data
       - ./replica2/postgresql.conf:/etc/postgresql/postgresql.conf
       - ./replica2/pg_hba.conf:/etc/postgresql/pg_hba.conf
+      - ./replica2/entrypoint.sh:/entrypoint.sh
     depends_on:
       primary:
         condition: service_healthy
