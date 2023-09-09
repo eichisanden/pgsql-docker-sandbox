@@ -1,4 +1,5 @@
 pgsql16/primary/data/
 pgsql16/replica1/data/
 pgsql16/replica2/data/
+pgsql16/demo/gradle/
 
