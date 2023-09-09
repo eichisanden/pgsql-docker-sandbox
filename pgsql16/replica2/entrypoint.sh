@@ -10,5 +10,5 @@ done
 pg_basebackup -h primary -p 5432 -D $PGDATA -S replication_slot_replica2 --progress -X stream -U replicator -Fp -R || :
 
 # start postgres
-bash /usr/local/bin/docker-entrypoint.sh -c 'config_file=/etc/postgresql/postgresql.conf' -c 'hba_file=/etc/postgresql/pg_hba.conf'
+bash /usr/local/bin/docker-entrypoint.sh -c 'config_file=/etc/postgresql/postgresql.conf' -c 'hba_file=/etc/postgresql/pg_hba.conf' -c 'log_statement=all'
 

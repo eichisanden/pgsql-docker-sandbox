@@ -20,6 +20,8 @@ services:
       - config_file=/etc/postgresql/postgresql.conf
       - -c
       - hba_file=/etc/postgresql/pg_hba.conf
+      - -c
+      - log_statement=all
     volumes:
       - ./primary/data:/var/lib/postgresql/data
       - ./primary/postgresql.conf:/etc/postgresql/postgresql.conf
