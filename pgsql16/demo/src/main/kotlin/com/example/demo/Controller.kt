@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.RestController
 class Controller(val service: Service) {
     @GetMapping("/")
     fun index(): String {
-        return service.hello()
+        return service.find()
+    }
+
+    @GetMapping("/update")
+    fun update(): String {
+        return service.update()
     }
 }

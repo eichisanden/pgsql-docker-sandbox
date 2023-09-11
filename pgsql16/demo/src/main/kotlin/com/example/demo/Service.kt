@@ -5,8 +5,13 @@ import org.springframework.transaction.annotation.Transactional
 
 @Service
 class Service(val repository: Repository) {
+    @Transactional(readOnly = true)
+    fun find(): String {
+        return repository.find()
+    }
+
     @Transactional
-    fun hello(): String {
-        return repository.hello()
+    fun update(): String {
+        return repository.update()
     }
 }
